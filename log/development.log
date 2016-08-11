@@ -1,0 +1,514 @@
+Started GET "/" for ::1 at 2016-08-11 11:43:21 -0400
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.6ms)
+  Rendering /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/satyamaringanti/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.7ms)
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBlogArticles (20160811103412)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "blog_articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "content" text, "favorite" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160811103412"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-11 15:43:47 UTC], ["updated_at", 2016-08-11 15:43:47 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2016-08-11 11:44:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (10.3ms)
+Completed 200 OK in 41ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:44:22 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (1.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:44:28 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (1.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:45:33 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (1.5ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:46:41 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (1.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:49:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.3ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (14.4ms)
+Completed 200 OK in 37ms (Views: 20.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:49:15 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (1.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 11:53:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (7.2ms)
+Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 12:07:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (7.6ms)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-08-11 12:08:02 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (1.6ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/blog_articles" for ::1 at 2016-08-11 12:11:49 -0400
+Processing by BlogArticlesController#index as HTML
+  Rendering blog_articles/index.html.erb within layouts/application
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 583ms (Views: 579.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blog_articles?favorite=1" for ::1 at 2016-08-11 12:11:55 -0400
+Processing by BlogArticlesController#index as HTML
+  Parameters: {"favorite"=>"1"}
+  Rendering blog_articles/index.html.erb within layouts/application
+  [1m[36mBlogArticle Load (0.3ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."favorite" = ?[0m  [["favorite", true]]
+  Rendered blog_articles/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/fetch_articles" for ::1 at 2016-08-11 12:11:59 -0400
+Processing by BlogArticlesController#populate_articles as HTML
+  Parameters: {"authenticity_token"=>"SnGVJNPcNTdqOzndc1RA+U4tWJo8aTOjzVzfEBRd6jrKH8WMHj+Ovc/zUHgDn2sTxBkErivn38lPLYvldo47Dg=="}
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:46:34 UTC], ["title", "Alexis Jay named as new chairwoman of abuse inquiry"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Alexis Jay named as new chairwoman of abuse inquiry"], ["content", "Professor Alexis Jay, who led the Rotherham abuse inquiry, is to be the new chairwoman of the national inquiry into child sex abuse."], ["created_at", 2016-08-11 15:46:34 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:41:50 UTC], ["title", "Mother and three children killed in A34 crash in Berkshire"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Mother and three children killed in A34 crash in Berkshire"], ["content", "A mother and three children, aged 11 to 13, are identified as the four fatal victims of an eight-vehicle crash on the A34."], ["created_at", 2016-08-11 15:41:50 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:41:44 UTC], ["title", "Syria conflict: Aleppo 'chlorine gas attack' investigated"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Syria conflict: Aleppo 'chlorine gas attack' investigated"], ["content", "The UN is investigating evidence of a toxic gas attack on the Syrian city of Aleppo, as footage of people being treated for breathing difficulties emerges."], ["created_at", 2016-08-11 14:41:44 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:54:09 UTC], ["title", "Germany in new anti-terror plan to thwart Islamist militants"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Germany in new anti-terror plan to thwart Islamist militants"], ["content", "Germans with dual nationality will lose their German citizenship if they fight for Islamists abroad, under new anti-terror proposals."], ["created_at", 2016-08-11 14:54:09 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 12:53:46 UTC], ["title", "Huffington Post founder Arianna Huffington to step down"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Huffington Post founder Arianna Huffington to step down"], ["content", "Arianna Huffington, who co-founded the news website Huffington Post 11 years ago, has announced she is to step down as editor-in-chief."], ["created_at", 2016-08-11 12:53:46 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 11:28:52 UTC], ["title", "Delays in discharging patients 23% rise"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Delays in discharging patients 23% rise"], ["content", "Delays in discharging patients from hospital have risen 23% since June last year, NHS England reveals."], ["created_at", 2016-08-11 11:28:52 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:31:01 UTC], ["title", "Labour awaits vote leadership rules appeal verdict"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Labour awaits vote leadership rules appeal verdict"], ["content", "The Court of Appeal will rule on Friday in a dispute about Labour's decision to block nearly 130,000 of its members from voting in the leadership contest."], ["created_at", 2016-08-11 15:31:01 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:20:34 UTC], ["title", "Payout after abuse victim details revealed"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Payout after abuse victim details revealed"], ["content", "A domestic abuse victim receives £75,000 from a police force after it revealed details of her treatment by a former boyfriend without her consent."], ["created_at", 2016-08-11 10:20:34 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 13:39:24 UTC], ["title", "Duke of Westminster Gerald Cavendish died of heart attack"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Duke of Westminster Gerald Cavendish died of heart attack"], ["content", "The billionaire landowner and philanthropist the Duke of Westminster died of a heart attack, a coroner confirms."], ["created_at", 2016-08-11 13:39:24 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:14:59 UTC], ["title", "Ex-Liverpool player Howard Gayle turns down MBE"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Ex-Liverpool player Howard Gayle turns down MBE"], ["content", "Liverpool's first black player reveals he has turned down an MBE nomination because \"accepting it would be a betrayal to Africans\"."], ["created_at", 2016-08-11 14:14:59 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 11:55:07 UTC], ["title", "Police probe tennis player 'poisoning'"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Police probe tennis player 'poisoning'"], ["content", "Police investigate claims a British teenager forced to withdraw from junior Wimbledon might have been deliberately poisoned."], ["created_at", 2016-08-11 11:55:07 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:48:54 UTC], ["title", "Watch GB's Grainger make medal history"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Watch GB's Grainger make medal history"], ["content", "Katherine Grainger becomes Britain's most decorated female Olympian by winning silver alongside Victoria Thornley in the women's double sculls."], ["created_at", 2016-08-11 14:48:54 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:38:16 UTC], ["title", "Rio Olympics 2016: GB's Rose hits first Olympic hole-in-one"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio Olympics 2016: GB's Rose hits first Olympic hole-in-one"], ["content", "GB's Justin Rose scores the first hole-in-one in Olympics history on the par-three fourth in Rio."], ["created_at", 2016-08-11 15:38:16 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:23:42 UTC], ["title", "Crowd wowed by 46-shot rally "]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Crowd wowed by 46-shot rally "], ["content", "Kim Song and Ning Ding delight the crowd at the Rio Olympics with a rally described as \"table tennis at its best\"."], ["created_at", 2016-08-11 10:23:42 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:12:08 UTC], ["title", "Moment Trump Tower climber arrested"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Moment Trump Tower climber arrested"], ["content", "A man has been arrested for climbing up the Trump Tower building in New York City using suction cups."], ["created_at", 2016-08-11 00:12:08 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 12:16:48 UTC], ["title", "Plea from mum of boy who lost limbs to meningitis B"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Plea from mum of boy who lost limbs to meningitis B"], ["content", "The mother of a boy from Walsall who lost his limbs after contracting meningitis B has said she will continue fighting for all children to be vaccinated against the infection."], ["created_at", 2016-08-11 12:16:48 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 07:06:06 UTC], ["title", "Why Hungarian migrants want to move to Brexit Britain"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Why Hungarian migrants want to move to Brexit Britain"], ["content", "Since the referendum, migrants coming to the UK to live, work and study have faced considerable uncertainties - but some remain determined to settle in the UK."], ["created_at", 2016-08-11 07:06:06 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 12:56:46 UTC], ["title", "Priest victim: 'He wore a facade'"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Priest victim: 'He wore a facade'"], ["content", "A man who was abused by former social worker and Catholic priest Philip Temple, who was jailed on Wednesday, has spoken to the BBC about his fight for justice."], ["created_at", 2016-08-11 12:56:46 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 07:28:33 UTC], ["title", "Should judge have sworn at defendant?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Should judge have sworn at defendant?"], ["content", "Writer Peter Moffat reflects on the rights and wrongs of a judge swearing at a defendant in court."], ["created_at", 2016-08-11 07:28:33 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-03-16 12:34:37 UTC], ["title", "BBC News Channel"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "BBC News Channel"], ["content", "Britain's most-watched news channel, delivering breaking news and analysis all day, every day."], ["created_at", 2016-03-16 12:34:37 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:37:43 UTC], ["title", "Jupiter gravity push sets up 'meteor storm' on Earth"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Jupiter gravity push sets up 'meteor storm' on Earth"], ["content", "Observers are looking forward to an annual astronomical event that could to turn into a spectacular \"meteor storm\" in the early hours of Friday."], ["created_at", 2016-08-11 15:37:43 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 09:04:57 UTC], ["title", "Star Trek Discovery to feature female lead"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Star Trek Discovery to feature female lead"], ["content", "The new Star Trek TV series is to centre on a female character, the show's executive producer reveals."], ["created_at", 2016-08-11 09:04:57 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 13:27:51 UTC], ["title", "Frank Gardner: From fireworks to fuselages"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Frank Gardner: From fireworks to fuselages"], ["content", "The work of the UK government's Forensic Explosive Laboratories at Fort Halstead."], ["created_at", 2016-08-11 13:27:51 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:06:26 UTC], ["title", "Anbarasan Ethirajan: Nepal's sense of despair"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Anbarasan Ethirajan: Nepal's sense of despair"], ["content", "More than a year after a devastating earthquake many are still homeless amid Nepal's chronic political instability."], ["created_at", 2016-08-11 00:06:26 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 02:44:33 UTC], ["title", "Shaun Ley: Are parties out-of-step with UK voters?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Shaun Ley: Are parties out-of-step with UK voters?"], ["content", "What do recent ructions in many of the UK's political parties say about the future of British politics?"], ["created_at", 2016-08-11 02:44:33 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 15:34:49 UTC], ["title", "Simon Falush: Booming stockpiles to keep oil weak"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Simon Falush: Booming stockpiles to keep oil weak"], ["content", "A growing glut of petrol and diesel, as well as crude oil, is set to keep oil prices under pressure near their current low levels in the coming months."], ["created_at", 2016-08-10 15:34:49 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 16:51:58 UTC], ["title", "David Sillito: Lies, damned lies and statistics"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "David Sillito: Lies, damned lies and statistics"], ["content", "David Sillito gives a guide to the issues about news and its struggle with numbers."], ["created_at", 2016-08-10 16:51:58 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 09:24:01 UTC], ["title", "Secunder Kermani: Shopkeeper killer 'inspired' by Pakistan"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Secunder Kermani: Shopkeeper killer 'inspired' by Pakistan"], ["content", "To what extent was the murder of Glasgow shopkeeper Asad Shah inspired by the killing of a politician in Pakistan five years ago? BBC Newsnight's Secunder Kermani reports."], ["created_at", 2016-08-10 09:24:01 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 01:38:20 UTC], ["title", "Tim Whewell: Could the US and Russia act jointly on Syria?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Tim Whewell: Could the US and Russia act jointly on Syria?"], ["content", "Would a Trump presidency be able to reach a deal with Russia to intervene jointly in Syria?"], ["created_at", 2016-08-10 01:38:20 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-09 20:59:42 UTC], ["title", "Helen Thomas: Looming Brexit headache for Nissan"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Helen Thomas: Looming Brexit headache for Nissan"], ["content", "The UK's biggest car plant - the Nissan factory in Sunderland - could face a crunch point for investment as soon as next year, sources tell BBC Newsnight."], ["created_at", 2016-08-09 20:59:42 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 01:23:35 UTC], ["title", "Why has Japan got yet another public holiday?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Why has Japan got yet another public holiday?"], ["content", "Japan marks Mountain Day, the latest addition to a long list of public holidays, which aims to celebrate the cultural role of its famous terrain."], ["created_at", 2016-08-11 01:23:35 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 11:39:19 UTC], ["title", "Who is the new Duke of Westminster?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Who is the new Duke of Westminster?"], ["content", "A profile of Hugh Grosvenor, who has become the seventh Duke of Westminster following the sudden death of his father."], ["created_at", 2016-08-11 11:39:19 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 14:09:34 UTC], ["title", "Mick Cash: RMT boss fighting on four fronts"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Mick Cash: RMT boss fighting on four fronts"], ["content", "RMT general secretary Mick Cash has defined his approach as \"pick your fights\". Now his union is involved in simultaneous fights with four rail companies."], ["created_at", 2016-08-10 14:09:34 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 14:00:27 UTC], ["title", "What is a Trotskyist?"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "What is a Trotskyist?"], ["content", "Deputy Labour leader Tom Watson says \"Trotsky entryists\" are \"twisting arms\" of young Labour members to back Jeremy Corbyn - but what does the term mean?"], ["created_at", 2016-08-10 14:00:27 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-08 14:16:40 UTC], ["title", "Rail strike: what are your rights?"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rail strike: what are your rights?"], ["content", "Thousands of Southern rail passengers face disruption, but what are your rights if you are caught up in the chaos?"], ["created_at", 2016-08-08 14:16:40 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:46:29 UTC], ["title", "Brexitwatch: How is the UK doing?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Brexitwatch: How is the UK doing?"], ["content", "The BBC looks at the latest impact of the Brexit vote on the UK's economy, and housing and jobs markets."], ["created_at", 2016-08-11 10:46:29 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-09 23:13:04 UTC], ["title", "Wild weather"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Wild weather"], ["content", "Finalists of this year's competition run by the Royal Meteorological Society and The Royal Photographic Society to find the best weather pictures."], ["created_at", 2016-08-09 23:13:04 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-09 09:55:26 UTC], ["title", "Pre-race rituals"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Pre-race rituals"], ["content", "Many sportsmen and women adopt unusual rituals before competing, some out of superstition, others for team bonding or to gee up the crowd. Here are a few images from Rio 2016 so far."], ["created_at", 2016-08-09 09:55:26 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-08 00:59:04 UTC], ["title", "'Caught Short'"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "'Caught Short'"], ["content", "India is home to the highest number of children suffering from stunted growth in the world, the charity WaterAid says in a new report."], ["created_at", 2016-08-08 00:59:04 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:49:37 UTC], ["title", "Rio Olympics 2016: Katherine Grainger and Victoria Thornley win double sculls silver"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio Olympics 2016: Katherine Grainger and Victoria Thornley win double sculls silver"], ["content", "Katherine Grainger becomes Britain's most decorated female Olympian by taking silver alongside Victoria Thornley in the double sculls."], ["created_at", 2016-08-11 15:49:37 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-08 14:47:37 UTC], ["title", "Rio Olympics 2016: Who's your Olympic body match?"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio Olympics 2016: Who's your Olympic body match?"], ["content", "Find your body match from more than 10,000 athletes competing in Rio."], ["created_at", 2016-08-08 14:47:37 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:54:44 UTC], ["title", "Amateur army"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amateur army"], ["content", "Some 100,000 Poles have joined paramilitary groups since the crisis in Ukraine."], ["created_at", 2016-08-10 23:54:44 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:33:06 UTC], ["title", "Menopause mystery"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Menopause mystery"], ["content", "Scientists are studying killer whales in an effort to understand the mysterious biology behind the menopause - in both orcas and humans."], ["created_at", 2016-08-10 23:33:06 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:57:50 UTC], ["title", "'Offensive and demeaning'"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "'Offensive and demeaning'"], ["content", "Descriptions of some women athletes in Rio have been called \"offensive and demeaning\"."], ["created_at", 2016-08-10 23:57:50 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:00:16 UTC], ["title", "Sword-fighting granny"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Sword-fighting granny"], ["content", "A 73-year-old martial arts expert, turned social media star, is teaching Indian youngsters to defend themselves."], ["created_at", 2016-08-11 00:00:16 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.3ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:07:09 UTC], ["title", "Brand Wiggins"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Brand Wiggins"], ["content", "How Britain's best-known cyclist has re-established his image and brand for Rio 2016 and beyond."], ["created_at", 2016-08-10 23:07:09 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 01:42:53 UTC], ["title", "Slow box office"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Slow box office"], ["content", "Some of the shine has come off the silver screen in China as a 15% fall in cinema attendance in July added to an ongoing box office downturn."], ["created_at", 2016-08-11 01:42:53 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 13:18:39 UTC], ["title", "Does Twitter need saving?"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Does Twitter need saving?"], ["content", "Is the little blue bird due to get its neck wrung? Reports of Twitter's demise take Twitter by storm."], ["created_at", 2016-08-11 13:18:39 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 15:12:57 UTC], ["title", "'I left in tears'"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "'I left in tears'"], ["content", "A TUC report suggests that more than half of women have been sexually harassed at work."], ["created_at", 2016-08-10 15:12:57 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.3ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:54:19 UTC], ["title", "'Everyone's chasing the Pikachu pin'"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "'Everyone's chasing the Pikachu pin'"], ["content", "The BBC's Julia Carneiro meets the avid fans of souvenir badges who have travelled to the Rio Olympics to add to their collections."], ["created_at", 2016-08-11 10:54:19 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.3ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:45:06 UTC], ["title", "Brazil's battle of the football shirts"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Brazil's battle of the football shirts"], ["content", "Fans of the Brazilian women's football star Marta alter the jersey of the men's captain, Neymar, to show their support and poke fun at the men's team performance."], ["created_at", 2016-08-11 10:45:06 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-07-28 16:16:07 UTC], ["title", "Want to be part of our Olympics coverage?"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Want to be part of our Olympics coverage?"], ["content", "We want you to help us tell the Rio 2016 Olympic story. Film yourself and your reaction to key Olympic events and share the content with us."], ["created_at", 2016-07-28 16:16:07 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:35:52 UTC], ["title", "Rio gossip: Keith Richards, Leonidas of Rhodes, the Iron Lady, Zac Efron"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio gossip: Keith Richards, Leonidas of Rhodes, the Iron Lady, Zac Efron"], ["content", "Rolling Stone Keith Richards tweets Team GB, Michael Phelps equals 2,000-year-old record, divers win lifetime pensions, plus more."], ["created_at", 2016-08-10 23:35:52 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 14:06:19 UTC], ["title", "Rio Olympics 2016: GB top table of fourth places - the 'worst position to finish'"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio Olympics 2016: GB top table of fourth places - the 'worst position to finish'"], ["content", "Fourth place is described as the worst place to finish at an Olympic Games - but so far in Rio Team GB are pretty good at it."], ["created_at", 2016-08-10 14:06:19 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:19:13 UTC], ["title", "Rio Olympics 2016: Refugee Olympic Team - how are they getting on?"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio Olympics 2016: Refugee Olympic Team - how are they getting on?"], ["content", "They were selected to \"send a message of hope\" but who are the 10 athletes in the Refugee Olympic Team and how are they doing in Rio?"], ["created_at", 2016-08-11 00:19:13 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 11:17:02 UTC], ["title", "Rio 2016 Olympics day-by-day guide"]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio 2016 Olympics day-by-day guide"], ["content", "Want to know what's happening when in Rio? Check out our comprehensive guide to all the action in Brazil."], ["created_at", 2016-08-10 11:17:02 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 05:32:22 UTC], ["title", "Rio Olympics 2016: Team GB medal tracker"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Rio Olympics 2016: Team GB medal tracker"], ["content", "Track Team GB's medal tally during the 2016 Rio Olympics in Brazil."], ["created_at", 2016-08-11 05:32:22 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-05 16:29:50 UTC], ["title", "All you need to know about Rio"]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "blog_articles" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "All you need to know about Rio"], ["content", "It's that time again. Four years since London 2012, it's time for Rio 2016."], ["created_at", 2016-08-05 16:29:50 UTC], ["updated_at", 2016-08-11 16:12:00 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 921ms (Views: 1.6ms | ActiveRecord: 188.9ms)
+
+
+Started GET "/blog_articles.rss" for ::1 at 2016-08-11 12:12:02 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (1.0ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (23.7ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blog_articles" for ::1 at 2016-08-11 12:12:45 -0400
+Processing by BlogArticlesController#index as HTML
+  Rendering blog_articles/index.html.erb within layouts/application
+  [1m[36mBlogArticle Load (0.5ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blog_articles?favorite=1" for ::1 at 2016-08-11 12:15:00 -0400
+Processing by BlogArticlesController#index as HTML
+  Parameters: {"favorite"=>"1"}
+  Rendering blog_articles/index.html.erb within layouts/application
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."favorite" = ?[0m  [["favorite", true]]
+  Rendered blog_articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/fetch_articles" for ::1 at 2016-08-11 12:15:02 -0400
+Processing by BlogArticlesController#populate_articles as HTML
+  Parameters: {"authenticity_token"=>"+v62YQ11qmDdb4gMZWidKetZzOaDbfOr2NyoaFXZ5zEGCx08ucfnxinACFKM6jcIl20xxGo3RNZnk6NcnaWVjQ=="}
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:46:34 UTC], ["title", "Alexis Jay named as new chairwoman of abuse inquiry"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:41:50 UTC], ["title", "Mother and three children killed in A34 crash in Berkshire"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:41:44 UTC], ["title", "Syria conflict: Aleppo 'chlorine gas attack' investigated"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:54:09 UTC], ["title", "Germany in new anti-terror plan to thwart Islamist militants"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 12:53:46 UTC], ["title", "Huffington Post founder Arianna Huffington to step down"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 11:28:52 UTC], ["title", "Delays in discharging patients 23% rise"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:31:01 UTC], ["title", "Labour awaits vote leadership rules appeal verdict"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:20:34 UTC], ["title", "Payout after abuse victim details revealed"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 13:39:24 UTC], ["title", "Duke of Westminster Gerald Cavendish died of heart attack"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:14:59 UTC], ["title", "Ex-Liverpool player Howard Gayle turns down MBE"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 11:55:07 UTC], ["title", "Police probe tennis player 'poisoning'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 14:48:54 UTC], ["title", "Watch GB's Grainger make medal history"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:38:16 UTC], ["title", "Rio Olympics 2016: GB's Rose hits first Olympic hole-in-one"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:23:42 UTC], ["title", "Crowd wowed by 46-shot rally "]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:12:08 UTC], ["title", "Moment Trump Tower climber arrested"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 12:16:48 UTC], ["title", "Plea from mum of boy who lost limbs to meningitis B"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 07:06:06 UTC], ["title", "Why Hungarian migrants want to move to Brexit Britain"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 12:56:46 UTC], ["title", "Priest victim: 'He wore a facade'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 07:28:33 UTC], ["title", "Should judge have sworn at defendant?"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-03-16 12:34:37 UTC], ["title", "BBC News Channel"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:37:43 UTC], ["title", "Jupiter gravity push sets up 'meteor storm' on Earth"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 09:04:57 UTC], ["title", "Star Trek Discovery to feature female lead"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 13:27:51 UTC], ["title", "Frank Gardner: From fireworks to fuselages"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:06:26 UTC], ["title", "Anbarasan Ethirajan: Nepal's sense of despair"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 02:44:33 UTC], ["title", "Shaun Ley: Are parties out-of-step with UK voters?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 15:34:49 UTC], ["title", "Simon Falush: Booming stockpiles to keep oil weak"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 16:51:58 UTC], ["title", "David Sillito: Lies, damned lies and statistics"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 09:24:01 UTC], ["title", "Secunder Kermani: Shopkeeper killer 'inspired' by Pakistan"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 01:38:20 UTC], ["title", "Tim Whewell: Could the US and Russia act jointly on Syria?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-09 20:59:42 UTC], ["title", "Helen Thomas: Looming Brexit headache for Nissan"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 01:23:35 UTC], ["title", "Why has Japan got yet another public holiday?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 11:39:19 UTC], ["title", "Who is the new Duke of Westminster?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 14:09:34 UTC], ["title", "Mick Cash: RMT boss fighting on four fronts"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 14:00:27 UTC], ["title", "What is a Trotskyist?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-08 14:16:40 UTC], ["title", "Rail strike: what are your rights?"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:46:29 UTC], ["title", "Brexitwatch: How is the UK doing?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-09 23:13:04 UTC], ["title", "Wild weather"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-09 09:55:26 UTC], ["title", "Pre-race rituals"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-08 00:59:04 UTC], ["title", "'Caught Short'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 15:49:37 UTC], ["title", "Rio Olympics 2016: Katherine Grainger and Victoria Thornley win double sculls silver"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-08 14:47:37 UTC], ["title", "Rio Olympics 2016: Who's your Olympic body match?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:54:44 UTC], ["title", "Amateur army"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:33:06 UTC], ["title", "Menopause mystery"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:57:50 UTC], ["title", "'Offensive and demeaning'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:00:16 UTC], ["title", "Sword-fighting granny"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:07:09 UTC], ["title", "Brand Wiggins"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 01:42:53 UTC], ["title", "Slow box office"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 13:18:39 UTC], ["title", "Does Twitter need saving?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 15:12:57 UTC], ["title", "'I left in tears'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:54:19 UTC], ["title", "'Everyone's chasing the Pikachu pin'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 10:45:06 UTC], ["title", "Brazil's battle of the football shirts"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-07-28 16:16:07 UTC], ["title", "Want to be part of our Olympics coverage?"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 23:35:52 UTC], ["title", "Rio gossip: Keith Richards, Leonidas of Rhodes, the Iron Lady, Zac Efron"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 14:06:19 UTC], ["title", "Rio Olympics 2016: GB top table of fourth places - the 'worst position to finish'"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 00:19:13 UTC], ["title", "Rio Olympics 2016: Refugee Olympic Team - how are they getting on?"]]
+  [1m[36mBlogArticle Load (0.2ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-10 11:17:02 UTC], ["title", "Rio 2016 Olympics day-by-day guide"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-11 05:32:22 UTC], ["title", "Rio Olympics 2016: Team GB medal tracker"]]
+  [1m[36mBlogArticle Load (0.1ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles" WHERE "blog_articles"."created_at" = ? AND "blog_articles"."title" = ?[0m  [["created_at", 2016-08-05 16:29:50 UTC], ["title", "All you need to know about Rio"]]
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 593ms (Views: 0.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/blog_articles.rss" for ::1 at 2016-08-11 12:15:04 -0400
+Processing by BlogArticlesController#index as RSS
+  Rendering blog_articles/index.rss.builder
+  [1m[36mBlogArticle Load (0.3ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.rss.builder (25.8ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blog_articles" for ::1 at 2016-08-11 12:15:08 -0400
+Processing by BlogArticlesController#index as HTML
+  Rendering blog_articles/index.html.erb within layouts/application
+  [1m[36mBlogArticle Load (0.8ms)[0m  [1m[34mSELECT "blog_articles".* FROM "blog_articles"[0m
+  Rendered blog_articles/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.8ms)
+
+
